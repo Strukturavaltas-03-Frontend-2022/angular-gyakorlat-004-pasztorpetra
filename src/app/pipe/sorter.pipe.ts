@@ -33,13 +33,14 @@ export class SorterPipe implements PipeTransform {
      *  összehasonlításának az eredményével.
      */
 
-    return value.sort((a, b) => {
-      if (typeof a[key] ==="number" && typeof b[key] === "number") {
+    value.sort((a, b) => {
+      if (typeof a[key] === 'number' && typeof b[key] === 'number') {
         return a[key] - b[key];
       } else {
         let stringA = String(a[key]).toLowerCase();
         let stringB = String(b[key]).toLowerCase();
         return stringA.localeCompare(stringB);
       }
+    });
   }
 }
